@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from accounts.views import LoginViewForm
-
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    url(r'^admin/login/', LoginViewForm.as_view()),
-    url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('accounts.urls'))
+    url(r'^admin/login/', LoginViewForm.as_view(), name = 'admin-login'),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'^admin/', admin.site.urls, name = 'admin'),
+    path('', views.index),
 
 ]

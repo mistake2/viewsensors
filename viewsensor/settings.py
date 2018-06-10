@@ -56,7 +56,7 @@ ROOT_URLCONF = 'viewsensor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["./accounts/template", ],
+        'DIRS': ["./accounts/template", "./viewsensor/template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

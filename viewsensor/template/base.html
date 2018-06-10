@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    Default title
+    {% endblock %}}</title>
+</head>
+<body>
+    {% block header %}
+        Default header
+    {%  endblock %}
+    <p align="right">
+        <a href={% url 'accounts:account' %} > Учетная запись</a>
+    </p>
+    <div>
+        {% block content%}
+        {%  endblock %}
+    </div>
+</body>
+</html>
