@@ -1,4 +1,5 @@
 from django.utils.http import is_safe_url, urlunquote
+from urllib.parse import urlparse
 
 
 def get_referer_url(request):
@@ -8,4 +9,4 @@ def get_referer_url(request):
     if not is_safe_url(url = url, host = request.get_host()):
         url = '/'
 
-    return url
+    return urlparse(url).path
